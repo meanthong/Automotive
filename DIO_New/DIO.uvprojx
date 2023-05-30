@@ -49,10 +49,10 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>test</OutputName>
+          <OutputName>DIO</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -381,12 +381,32 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>scr</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>.\scr\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>Dio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\scr\Dio.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>inc</GroupName>
+          <Files>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\main.h</FilePath>
+            </File>
+            <File>
+              <FileName>Dio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\Dio.h</FilePath>
             </File>
           </Files>
         </Group>
