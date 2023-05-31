@@ -2,7 +2,9 @@
 #include "Dio.h"
 #include "main.h"
 // Device header
-
+#include "setjmp.h"
+static uint8_t bits=0;
+jmp_buf buf;
 void CONFIG()
 	{
 		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOB|RCC_APB2Periph_GPIOC, ENABLE);
@@ -11,75 +13,95 @@ void Delay(__IO uint32_t nCount)
 {
   for(; nCount != 0; nCount--);
 }
-uint8_t readbtn()
-	{
-		uint8_t bits=0b00000000;
+
+void delay_ms(__IO uint32_t t)
+{
+		__IO uint32_t i;
+		for(i=0; i<t; i++){
+			Delay(100);
+		}
 		if(Dio_ReadChannel(btn1) == 0)
 			{
 				while(Dio_ReadChannel(btn1) == 0){}
-				bits = 0b000000001;
-				blink(1000000,5);
-					offled();
-				return bits;
+				blink(10000, 5);
+
 			}
-		else if(Dio_ReadChannel(btn2) == 0)
+		if(Dio_ReadChannel(btn2) == 0)
 			{
 				while(Dio_ReadChannel(btn2) == 0){}
-				bits = 0b000000010;
-				chasing(1000000,5);
-					offled();
-				return bits;
+				chasing(10000,5);
+
 			}
-		else if(Dio_ReadChannel(btn3) == 0)
+		if(Dio_ReadChannel(btn3) == 0)
 			{
 				while(Dio_ReadChannel(btn3) == 0){}
-				bits = 0b000000100;
 				offled();
-				return bits;
 			}
-		bits=0b00000000; return bits;
+	}
+void readbtn()
+	{
+		int temp=setjmp(buf);
+		if(Dio_ReadChannel(btn1) == 0)
+			{
+				while(Dio_ReadChannel(btn1) == 0){}
+				blink(10000, 5);
+			
+			}
+		 if(Dio_ReadChannel(btn2) == 0)
+			{
+				while(Dio_ReadChannel(btn2) == 0){}
+				chasing(10000,5);
+
+			}
+		 if(Dio_ReadChannel(btn3) == 0)
+			{
+				while(Dio_ReadChannel(btn3) == 0){}
+				offled();
+			}
+
 	}
 	
-void blink(volatile uint32_t delay, int time){
+void blink(__IO uint32_t delay, int time){
 for(int i=0;i<time;i++)
 	{
 		Dio_WriteChannel(led1, STD_LOW);
 		Dio_WriteChannel(led2, STD_LOW);
 		Dio_WriteChannel(led3, STD_LOW);
-		if(readbtn()!=0x00) return;
-		Delay(delay);
+		delay_ms(delay);
 		
 		Dio_WriteChannel(led1, STD_HIGH);
 		Dio_WriteChannel(led2, STD_HIGH);
 		Dio_WriteChannel(led3, STD_HIGH);
-		Delay(delay);
-		if(readbtn()!=0x00) return;
+		delay_ms(delay);
 	}
+
+	longjmp(buf, 2);
 }
 
-void chasing(volatile uint32_t delay, int time){
+void chasing(__IO uint32_t delay, int time){
 	Dio_ChannelType arr[] = {led1, led2, led3};
 	for(int i=0; i<time; i++){
 	for(int j=0; j<3; j++)
 		{
 			Dio_WriteChannel(arr[j], STD_LOW);
-			if(readbtn()!=0x00) return;
-			Delay(delay);
+			delay_ms(delay);
 		}
 	for(int j=0; j<3; j++)
 		{
 			Dio_WriteChannel(arr[j], STD_HIGH);
-			if(readbtn()!=0x00) return;
-			Delay(delay);
+			delay_ms(delay);
 		}
 	}
+
+	longjmp(buf,2);
 }
 
 void offled(){
 Dio_WriteChannel(led1, STD_LOW);
 Dio_WriteChannel(led2, STD_LOW);
 Dio_WriteChannel(led3, STD_LOW);
-if(readbtn()!=0x00) return;
+delay_ms(10);
+	longjmp(buf,2);
 }
 /*******************Main*******************/
 int main(void)

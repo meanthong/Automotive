@@ -9,9 +9,9 @@
 #define led2 DIO_CHANNEL_PB6
 #define led3 DIO_CHANNEL_PB7
 void CONFIG();
-void Delay(volatile uint32_t nCount);
-uint8_t readbtn();
-void blink(volatile uint32_t delay, int time);
-void chasing(volatile uint32_t delay, int time);
+void Delay(__IO uint32_t nCount);
+void readbtn();
+void blink(__IO uint32_t delay, int time);
+void chasing(__IO uint32_t delay, int time);
 void offled();
 #endif

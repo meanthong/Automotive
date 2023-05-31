@@ -21,72 +21,12 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
-C:\Users\HP\OneDrive\Documents\KeilC_Project\DIO_Excercise\DIO.uvprojx
+C:\Users\HP\OneDrive\Documents\GIT\Automotive\DIO_Excercise_Blink_Chasing_3Led\DIO.uvprojx
 Project File Date:  05/30/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Target 1'
-assembling startup_stm32f10x_md.s...
-RTE/Device/STM32F103C8/system_stm32f10x.c(167): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
-__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
-            ^
-RTE/Device/STM32F103C8/system_stm32f10x.c(167): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
-    ^
-1 warning generated.
-compiling system_stm32f10x.c...
-scr/Dio.c(1): warning: In file included from...
-./inc\Dio.h(75): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-scr/Dio.c(7): warning: 44 enumeration values not explicitly handled in switch: 'DIO_CHANNEL_PA0', 'DIO_CHANNEL_PA1', 'DIO_CHANNEL_PA2'... [-Wswitch-enum]
-        switch(ChannelID){
-               ^
-scr/Dio.c(49): warning: variable 'gpioPORT' may be uninitialized when used here [-Wconditional-uninitialized]
-        if(Level == STD_LOW) GPIO_ResetBits(gpioPORT, gpioPIN);
-                                            ^~~~~~~~
-scr/Dio.c(4): note: initialize the variable 'gpioPORT' to silence this warning
-        GPIO_TypeDef *gpioPORT;
-                              ^
-                               = 0
-scr/Dio.c(49): warning: variable 'gpioPIN' may be uninitialized when used here [-Wconditional-uninitialized]
-        if(Level == STD_LOW) GPIO_ResetBits(gpioPORT, gpioPIN);
-                                                      ^~~~~~~
-scr/Dio.c(5): note: initialize the variable 'gpioPIN' to silence this warning
-        uint16_t gpioPIN;
-                        ^
-                         = 0
-scr/Dio.c(58): warning: 45 enumeration values not explicitly handled in switch: 'DIO_CHANNEL_PA3', 'DIO_CHANNEL_PA4', 'DIO_CHANNEL_PA5'... [-Wswitch-enum]
-switch(ChannelID){
-       ^
-scr/Dio.c(87): warning: variable 'gpioPORT' is used uninitialized whenever switch default is taken [-Wsometimes-uninitialized]
-                default:;
-                ^~~~~~~
-scr/Dio.c(90): note: uninitialized use occurs here
-                if(GPIO_ReadInputDataBit(gpioPORT, gpioPIN) ==0) return STD_LOW;
-                                         ^~~~~~~~
-scr/Dio.c(55): note: initialize the variable 'gpioPORT' to silence this warning
-                        GPIO_TypeDef *gpioPORT;
-                                              ^
-                                               = 0
-scr/Dio.c(87): warning: variable 'gpioPIN' is used uninitialized whenever switch default is taken [-Wsometimes-uninitialized]
-                default:;
-                ^~~~~~~
-scr/Dio.c(90): note: uninitialized use occurs here
-                if(GPIO_ReadInputDataBit(gpioPORT, gpioPIN) ==0) return STD_LOW;
-                                                   ^~~~~~~
-scr/Dio.c(56): note: initialize the variable 'gpioPIN' to silence this warning
-        uint16_t gpioPIN;
-                        ^
-                         = 0
-7 warnings generated.
-compiling Dio.c...
-C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/misc.c(132): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-    NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
-                                               ~ ^~~~~~~~~~~
-1 warning generated.
-compiling misc.c...
+Build target 'Target 1'
 scr/main.c(2): warning: In file included from...
 ./inc\Dio.h(75): warning: no newline at end of file [-Wnewline-eof]
         
@@ -97,9 +37,9 @@ void CONFIG();
            ^
             void
 ./inc\main.h(13): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-uint8_t readbtn();
-               ^
-                void
+void readbtn();
+            ^
+             void
 ./inc\main.h(16): warning: this function declaration is not a prototype [-Wstrict-prototypes]
 void offled();
            ^
@@ -107,49 +47,66 @@ void offled();
 ./inc\main.h(17): warning: no newline at end of file [-Wnewline-eof]
 #endif
       ^
-scr/main.c(6): warning: no previous prototype for function 'CONFIG' [-Wmissing-prototypes]
+scr/main.c(8): warning: no previous prototype for function 'CONFIG' [-Wmissing-prototypes]
 void CONFIG()
      ^
 ./inc\main.h(11): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
 void CONFIG();
      ^
             void
-scr/main.c(16): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-                uint8_t bits=0b00000000;
-                             ^
-scr/main.c(20): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-                                bits = 0b000000001;
-                                       ^
-scr/main.c(28): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-                                bits = 0b000000010;
-                                       ^
-scr/main.c(36): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-                                bits = 0b000000100;
-                                       ^
-scr/main.c(40): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-                bits=0b00000000; return bits;
-                     ^
-scr/main.c(14): warning: no previous prototype for function 'readbtn' [-Wmissing-prototypes]
-uint8_t readbtn()
-        ^
+scr/main.c(17): warning: no previous prototype for function 'delay_ms' [-Wmissing-prototypes]
+void delay_ms(__IO uint32_t t)
+     ^
+scr/main.c(17): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void delay_ms(__IO uint32_t t)
+^
+static 
+scr/main.c(43): warning: disabled expansion of recursive macro [-Wdisabled-macro-expansion]
+                int temp=setjmp(buf);
+                         ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\setjmp.h(76): note: expanded from macro 'setjmp'
+#define setjmp(jmp_buf) (__CLIBNS setjmp(jmp_buf))
+                                  ^
+scr/main.c(43): warning: unused variable 'temp' [-Wunused-variable]
+                int temp=setjmp(buf);
+                    ^
+scr/main.c(41): warning: no previous prototype for function 'readbtn' [-Wmissing-prototypes]
+void readbtn()
+     ^
 ./inc\main.h(13): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
-uint8_t readbtn();
-        ^
-                void
-scr/main.c(78): warning: no previous prototype for function 'offled' [-Wmissing-prototypes]
+void readbtn();
+     ^
+             void
+scr/main.c(64): warning: function 'blink' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void blink(__IO uint32_t delay, int time){
+                                         ^
+scr/main.c(81): warning: function 'chasing' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void chasing(__IO uint32_t delay, int time){
+                                           ^
+scr/main.c(99): warning: no previous prototype for function 'offled' [-Wmissing-prototypes]
 void offled(){
      ^
 ./inc\main.h(16): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
 void offled();
      ^
             void
-13 warnings generated.
+scr/main.c(99): warning: function 'offled' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void offled(){
+             ^
+scr/main.c(7): warning: no previous extern declaration for non-static variable 'buf' [-Wmissing-variable-declarations]
+jmp_buf buf;
+        ^
+scr/main.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+jmp_buf buf;
+^
+scr/main.c(6): warning: unused variable 'bits' [-Wunused-variable]
+static uint8_t bits=0;
+               ^
+16 warnings generated.
 compiling main.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_rcc.c...
 linking...
-Program Size: Code=1398 RO-data=258 RW-data=0 ZI-data=1632  
-".\Objects\DIO.axf" - 0 Error(s), 22 Warning(s).
+Program Size: Code=1584 RO-data=256 RW-data=0 ZI-data=1792  
+".\Objects\DIO.axf" - 0 Error(s), 16 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -180,17 +137,17 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Include file:  RTE_Driver\Config\RTE_Device.h
-      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
       Source file:   Device\Source\ARM\startup_stm32f10x_md.s
       Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
 
    * Component: Keil::Device:StdPeriph Drivers:Framework:3.5.1
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
       Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
       Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
-      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
-      Source file:   Device\StdPeriph_Driver\src\misc.c
       Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Source file:   Device\StdPeriph_Driver\src\misc.c
 
    * Component: Keil::Device:StdPeriph Drivers:GPIO:3.5.0
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
