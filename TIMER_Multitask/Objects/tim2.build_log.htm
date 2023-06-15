@@ -1,0 +1,205 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mean HP, HP Inc., LIC=UJWP0-B5NE5-RAADM-XU4PA-MH3ET-M183T
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+C:\Users\HP\OneDrive\Documents\KeilC_Project\Tim2\tim2.uvprojx
+Project File Date:  06/12/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f10x_md.s...
+src/main.c(1): warning: In file included from...
+./inc\delay.h(5): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+uint32_t milis();
+              ^
+               void
+./inc\delay.h(7): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void TIM2_IRQHandler();
+                    ^
+                     void
+./inc\delay.h(8): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+src/main.c(1): warning: In file included from...
+./inc\delay.h(3): warning: In file included from...
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(8302): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(87): warning: In file included from...
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_tim.h(51): warning: padding size of 'TIM_TimeBaseInitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+src/main.c(4): warning: no previous prototype for function 'TIM2_INT_Init' [-Wmissing-prototypes]
+void TIM2_INT_Init(){
+     ^
+src/main.c(4): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void TIM2_INT_Init(){
+^
+static 
+src/main.c(32): warning: no previous prototype for function 'LED' [-Wmissing-prototypes]
+void LED(){GPIOB->ODR ^= GPIO_Pin_12;}
+     ^
+src/main.c(32): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void LED(){GPIOB->ODR ^= GPIO_Pin_12;}
+^
+static 
+src/main.c(33): warning: no previous prototype for function 'LED1' [-Wmissing-prototypes]
+void LED1(){GPIOC->ODR ^= GPIO_Pin_13;}
+     ^
+src/main.c(33): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void LED1(){GPIOC->ODR ^= GPIO_Pin_13;}
+^
+static 
+src/main.c(34): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void multitask(void (*func)(), uint32_t *time, uint32_t delay){
+                           ^
+                            void
+src/main.c(34): warning: no previous prototype for function 'multitask' [-Wmissing-prototypes]
+void multitask(void (*func)(), uint32_t *time, uint32_t delay){
+     ^
+src/main.c(34): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void multitask(void (*func)(), uint32_t *time, uint32_t delay){
+^
+static 
+9 warnings generated.
+compiling main.c...
+src/delay.c(1): warning: In file included from...
+./inc\delay.h(5): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+uint32_t milis();
+              ^
+               void
+./inc\delay.h(7): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void TIM2_IRQHandler();
+                    ^
+                     void
+./inc\delay.h(8): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+src/delay.c(2): warning: no previous prototype for function 'milis' [-Wmissing-prototypes]
+uint32_t milis(){
+         ^
+./inc\delay.h(5): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+uint32_t milis();
+         ^
+               void
+src/delay.c(5): warning: no previous prototype for function 'TIM2_IRQHandler' [-Wmissing-prototypes]
+void TIM2_IRQHandler()
+     ^
+./inc\delay.h(7): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+void TIM2_IRQHandler();
+     ^
+                     void
+5 warnings generated.
+compiling delay.c...
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    ^
+1 warning generated.
+compiling system_stm32f10x.c...
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/misc.c(132): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+                                               ~ ^~~~~~~~~~~
+1 warning generated.
+compiling misc.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(23): warning: In file included from...
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_tim.h(51): warning: padding size of 'TIM_TimeBaseInitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(726): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+             TIM_BDTRInitStruct->TIM_Break | TIM_BDTRInitStruct->TIM_BreakPolarity |
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(1983): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp = CCER_CCE_Set << TIM_Channel;
+      ~ ~~~~~~~~~~~~~^~~~~~~~~~~~~~
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(2013): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp = CCER_CCNE_Set << TIM_Channel;
+      ~ ~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(2058): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp1 = CCER_CCE_Set << (uint16_t)TIM_Channel;
+       ~ ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+compiling stm32f10x_tim.c...
+linking...
+Program Size: Code=1456 RO-data=252 RW-data=0 ZI-data=1640  
+".\Objects\tim2.axf" - 0 Error(s), 21 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+   * Component: Framework Version: 3.5.1
+   * Component: GPIO Version: 3.5.0
+   * Component: RCC Version: 3.5.0
+   * Component: TIM Version: 3.5.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C8
+  .\RTE\_Target_1
+  C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.5.1
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
