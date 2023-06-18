@@ -21,80 +21,13 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
-C:\Users\HP\OneDrive\Documents\GIT\Automotive\DIO_Session2\DIO.uvprojx
+C:\Users\HP\OneDrive\Documents\GIT\Automotive\DIO_BLINK_PC13\DIO.uvprojx
 Project File Date:  05/30/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
 assembling startup_stm32f10x_md.s...
-scr/main.c(2): warning: In file included from...
-./inc\Dio.h(75): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-scr/main.c(3): warning: In file included from...
-./inc\main.h(5): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void CONFIG();
-           ^
-            void
-./inc\main.h(7): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-scr/main.c(6): warning: no previous prototype for function 'CONFIG' [-Wmissing-prototypes]
-void CONFIG()
-     ^
-./inc\main.h(5): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
-void CONFIG();
-     ^
-            void
-4 warnings generated.
-compiling main.c...
-scr/Dio.c(1): warning: In file included from...
-./inc\Dio.h(75): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-scr/Dio.c(7): warning: 46 enumeration values not explicitly handled in switch: 'DIO_CHANNEL_PA1', 'DIO_CHANNEL_PA2', 'DIO_CHANNEL_PA3'... [-Wswitch-enum]
-        switch(ChannelID){
-               ^
-scr/Dio.c(29): warning: variable 'gpioPORT' may be uninitialized when used here [-Wconditional-uninitialized]
-        if(Level == STD_LOW) GPIO_ResetBits(gpioPORT, gpioPIN);
-                                            ^~~~~~~~
-scr/Dio.c(4): note: initialize the variable 'gpioPORT' to silence this warning
-        GPIO_TypeDef *gpioPORT;
-                              ^
-                               = 0
-scr/Dio.c(29): warning: variable 'gpioPIN' may be uninitialized when used here [-Wconditional-uninitialized]
-        if(Level == STD_LOW) GPIO_ResetBits(gpioPORT, gpioPIN);
-                                                      ^~~~~~~
-scr/Dio.c(5): note: initialize the variable 'gpioPIN' to silence this warning
-        uint16_t gpioPIN;
-                        ^
-                         = 0
-scr/Dio.c(38): warning: 47 enumeration values not explicitly handled in switch: 'DIO_CHANNEL_PA1', 'DIO_CHANNEL_PA2', 'DIO_CHANNEL_PA3'... [-Wswitch-enum]
-        switch(ChannelID){
-               ^
-scr/Dio.c(49): warning: variable 'gpioPORT' is used uninitialized whenever switch default is taken [-Wsometimes-uninitialized]
-                default:;
-                ^~~~~~~
-scr/Dio.c(52): note: uninitialized use occurs here
-                if(GPIO_ReadInputDataBit(gpioPORT, gpioPIN) ==0) return STD_LOW;
-                                         ^~~~~~~~
-scr/Dio.c(35): note: initialize the variable 'gpioPORT' to silence this warning
-                        GPIO_TypeDef *gpioPORT;
-                                              ^
-                                               = 0
-scr/Dio.c(49): warning: variable 'gpioPIN' is used uninitialized whenever switch default is taken [-Wsometimes-uninitialized]
-                default:;
-                ^~~~~~~
-scr/Dio.c(52): note: uninitialized use occurs here
-                if(GPIO_ReadInputDataBit(gpioPORT, gpioPIN) ==0) return STD_LOW;
-                                                   ^~~~~~~
-scr/Dio.c(36): note: initialize the variable 'gpioPIN' to silence this warning
-        uint16_t gpioPIN;
-                        ^
-                         = 0
-7 warnings generated.
-compiling Dio.c...
 RTE/Device/STM32F103C8/system_stm32f10x.c(167): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
 __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
             ^
@@ -108,11 +41,52 @@ C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Dr
                                                ~ ^~~~~~~~~~~
 1 warning generated.
 compiling misc.c...
-compiling stm32f10x_gpio.c...
+scr/main.c(2): warning: In file included from...
+./inc\Dio.h(78): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void Dio_Config();
+               ^
+                void
+./inc\Dio.h(86): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+scr/main.c(3): warning: In file included from...
+./inc\main.h(5): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void CONFIG();
+           ^
+            void
+./inc\main.h(7): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+4 warnings generated.
+compiling main.c...
 compiling stm32f10x_rcc.c...
+scr/Dio.c(1): warning: In file included from...
+./inc\Dio.h(78): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void Dio_Config();
+               ^
+                void
+./inc\Dio.h(86): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+scr/Dio.c(4): warning: no previous prototype for function 'Dio_Config' [-Wmissing-prototypes]
+void Dio_Config(){
+     ^
+./inc\Dio.h(78): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+void Dio_Config();
+     ^
+                void
+scr/Dio.c(2): warning: no previous extern declaration for non-static variable 'GPIO_InitStruct' [-Wmissing-variable-declarations]
+GPIO_InitTypeDef GPIO_InitStruct;
+                 ^
+scr/Dio.c(2): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+GPIO_InitTypeDef GPIO_InitStruct;
+^
+4 warnings generated.
+compiling Dio.c...
+compiling stm32f10x_gpio.c...
 linking...
-Program Size: Code=980 RO-data=252 RW-data=0 ZI-data=1632  
-".\Objects\DIO.axf" - 0 Error(s), 13 Warning(s).
+Program Size: Code=1952 RO-data=252 RW-data=0 ZI-data=1640  
+".\Objects\DIO.axf" - 0 Error(s), 10 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -143,21 +117,21 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
-      Source file:   Device\Source\system_stm32f10x.c
       Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
 
    * Component: Keil::Device:StdPeriph Drivers:Framework:3.5.1
-      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
-      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
-      Include file:  Device\StdPeriph_Driver\inc\misc.h
-      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
       Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
 
    * Component: Keil::Device:StdPeriph Drivers:GPIO:3.5.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
 
    * Component: Keil::Device:StdPeriph Drivers:RCC:3.5.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h

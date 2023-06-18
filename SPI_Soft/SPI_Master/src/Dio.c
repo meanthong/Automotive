@@ -127,7 +127,7 @@ switch(ChannelID){
 		CHANNEL(C,14)
 		CHANNEL(C,15)
 	}
-	GPIO_InitStruct.GPIO_Mode= GPIO_Mode_IPU;
+	GPIO_InitStruct.GPIO_Mode= GPIO_Mode_IN_FLOATING;
 	GPIO_InitStruct.GPIO_Pin = gpioPIN;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(gpioPORT, &GPIO_InitStruct);
