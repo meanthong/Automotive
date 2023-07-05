@@ -1,0 +1,233 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mean HP, HP Inc., LIC=UJWP0-B5NE5-RAADM-XU4PA-MH3ET-M183T
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+C:\Users\HP\OneDrive\Documents\KeilC_Project\SPI_hw\SPI_Hardware\SPI_HardwareAutosar.uvprojx
+Project File Date:  07/01/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'File'
+assembling startup_stm32f10x_md.s...
+src/Spi.c(1): warning: In file included from...
+./inc\Spi.h(58): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+Std_ReturnType Spi_DeInit ();
+                          ^
+                           void
+./inc\Spi.h(60): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+src/Spi.c(71): warning: incompatible pointer types assigning to 'Spi_DataBufferType *' from 'uint8_t *' (aka 'unsigned char *') [-Wincompatible-pointer-types]
+                DataBufferPtr = DataBufferPtr->node;
+                              ^ ~~~~~~~~~~~~~~~~~~~
+src/Spi.c(34): warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+        case SPI_CHANNEL_2:
+        ^
+src/Spi.c(34): note: insert '__attribute__((fallthrough));' to silence this warning
+        case SPI_CHANNEL_2:
+        ^
+        __attribute__((fallthrough)); 
+src/Spi.c(34): note: insert 'break;' to avoid fall-through
+        case SPI_CHANNEL_2:
+        ^
+        break; 
+src/Spi.c(47): warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+        case SPI_CHANNEL_3:
+        ^
+src/Spi.c(47): note: insert '__attribute__((fallthrough));' to silence this warning
+        case SPI_CHANNEL_3:
+        ^
+        __attribute__((fallthrough)); 
+src/Spi.c(47): note: insert 'break;' to avoid fall-through
+        case SPI_CHANNEL_3:
+        ^
+        break; 
+src/Spi.c(60): warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+        case SPI_CHANNEL_INVALID: 
+        ^
+src/Spi.c(60): note: insert '__attribute__((fallthrough));' to silence this warning
+        case SPI_CHANNEL_INVALID: 
+        ^
+        __attribute__((fallthrough)); 
+src/Spi.c(60): note: insert 'break;' to avoid fall-through
+        case SPI_CHANNEL_INVALID: 
+        ^
+        break; 
+src/Spi.c(1): warning: In file included from...
+./inc\Spi.h(47): warning: padding size of 'Spi_DataBufferType' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct {
+        ^
+src/Spi.c(126): warning: incompatible pointer types assigning to 'Spi_DataBufferType *' from 'uint8_t *' (aka 'unsigned char *') [-Wincompatible-pointer-types]
+                DataBufferPointer = DataBufferPointer->node;
+                                  ^ ~~~~~~~~~~~~~~~~~~~~~~~
+src/Spi.c(92): warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+        case SPI_CHANNEL_2:
+        ^
+src/Spi.c(92): note: insert '__attribute__((fallthrough));' to silence this warning
+        case SPI_CHANNEL_2:
+        ^
+        __attribute__((fallthrough)); 
+src/Spi.c(92): note: insert 'break;' to avoid fall-through
+        case SPI_CHANNEL_2:
+        ^
+        break; 
+src/Spi.c(105): warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+        case SPI_CHANNEL_3:
+        ^
+src/Spi.c(105): note: insert '__attribute__((fallthrough));' to silence this warning
+        case SPI_CHANNEL_3:
+        ^
+        __attribute__((fallthrough)); 
+src/Spi.c(105): note: insert 'break;' to avoid fall-through
+        case SPI_CHANNEL_3:
+        ^
+        break; 
+src/Spi.c(118): warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+        case SPI_CHANNEL_INVALID: 
+        ^
+src/Spi.c(118): note: insert '__attribute__((fallthrough));' to silence this warning
+        case SPI_CHANNEL_INVALID: 
+        ^
+        __attribute__((fallthrough)); 
+src/Spi.c(118): note: insert 'break;' to avoid fall-through
+        case SPI_CHANNEL_INVALID: 
+        ^
+        break; 
+src/Spi.c(130): warning: no previous prototype for function 'Spi_DeInit' [-Wmissing-prototypes]
+Std_ReturnType Spi_DeInit (){
+               ^
+./inc\Spi.h(58): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+Std_ReturnType Spi_DeInit ();
+               ^
+                           void
+src/Spi.c(147): warning: code will never be executed [-Wunreachable-code]
+                RCC_APB1PeriphResetCmd(RCC_APB1Periph_SPI3, ENABLE);
+                ^~~~~~~~~~~~~~~~~~~~~~
+src/Spi.c(133): warning: code will never be executed [-Wunreachable-code]
+                RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1, ENABLE);
+                ^~~~~~~~~~~~~~~~~~~~~~
+src/Spi.c(155): warning: no newline at end of file [-Wnewline-eof]
+int main(){}
+            ^
+src/Spi.c(1): warning: In file included from...
+./inc\Spi.h(44): warning: no previous extern declaration for non-static variable 'GPIO_InitStruct' [-Wmissing-variable-declarations]
+GPIO_InitTypeDef GPIO_InitStruct;
+                 ^
+./inc\Spi.h(44): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+GPIO_InitTypeDef GPIO_InitStruct;
+^
+16 warnings generated.
+compiling Spi.c...
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/misc.c(132): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+                                               ~ ^~~~~~~~~~~
+1 warning generated.
+compiling misc.c...
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    ^
+1 warning generated.
+compiling system_stm32f10x.c...
+compiling stm32f10x_gpio.c...
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(23): warning: In file included from...
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/inc\stm32f10x_spi.h(87): warning: padding size of 'I2S_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(494): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = (uint16_t)1 << (uint16_t)itpos;
+         ~ ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(839): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+        ~ ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(845): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = 0x01 << itmask;
+         ~ ~~~~~^~~~~~~~~
+C:/Users/HP/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(891): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+        ~ ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+compiling stm32f10x_spi.c...
+compiling stm32f10x_rcc.c...
+linking...
+Program Size: Code=608 RO-data=252 RW-data=0 ZI-data=1632  
+".\Objects\SPI_HardwareAutosar.axf" - 0 Error(s), 23 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+   * Component: Framework Version: 3.5.1
+   * Component: GPIO Version: 3.5.0
+   * Component: RCC Version: 3.5.0
+   * Component: SPI Version: 3.5.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C8
+  .\RTE\_File
+  C:\Users\HP\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  C:\Users\HP\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.5.1
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_spi.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_spi.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
